@@ -1,0 +1,139 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #b1ddc9;
+  color: #555;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixes the navbar to the top */
+  top: 0; /* Ensures the navbar stays at the top */
+  left: 0; /* Sticks the navbar to the left */
+  width: 100%; /* Ensures the navbar spans the full width of the screen */
+  z-index: 100; /* Keeps the navbar on top of other content */
+}
+
+
+
+/* Navbar-left */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+}
+
+.categories-link {
+  font-size: 16px;
+  color: #555;
+  text-decoration: none;
+  padding-left: 45px;
+  margin-left: 25px;
+}
+
+.categories-link:hover {
+  color: #4c8bf5;
+}
+
+/* Search bar */
+.search-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  width: 500%;
+  /* Increased the width of the search bar */
+}
+
+.search-container i {
+  color: #aaa;
+  margin-right: 10px;
+}
+
+.search-container input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Navbar-right */
+.navbar-right ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-right ul li {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right ul li a {
+  color: #555;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-right ul li a:hover {
+  color: #4c8bf5;
+}
+
+.icon-circle {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 8px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    padding-left: 0%;
+    margin-left: 0%;
+  }
+
+  .search-form {
+    padding-top: 0px;
+    padding-left: 40px;
+    width: 80%;
+  }
+
+  .categories-link {
+    padding-top: 10%;
+  }
+}
