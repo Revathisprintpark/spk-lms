@@ -15,12 +15,13 @@ interface Category {
 export class NavBar1Component {
   categories: Category[] = [
     { name: 'Web Development', subModules: ['Frontend', 'Backend', 'Full Stack', 'Frameworks'] },
-    { name: 'Mobile Development', subModules: ['Android', 'iOS', 'Flutter', 'React Native'] },
+    { name: 'Mobile Development 1', subModules: ['Android', 'iOS', 'Flutter', 'React Native'] },
     { name: 'Game Development', subModules: ['Unity', 'Unreal Engine', '2D Games', '3D Games'] },
     { name: 'Entrepreneurship', subModules: ['Startup Tips', 'Funding', 'Business Plans', 'Market Research'] },
     { name: 'Business Analytics', subModules: ['Data Science', 'Data Visualization', 'Machine Learning', 'Statistics'] },
     { name: 'IT Certifications', subModules: ['AWS', 'CompTIA', 'Google Cloud', 'Cisco'] },
-    { name: 'Digital Marketing', subModules: ['SEO', 'PPC', 'Social Media', 'Email Marketing'] }
+    { name: 'Digital Marketing', subModules: ['SEO', 'PPC', 'Social Media', 'Email Marketing'] },
+    {name:'Digital Marketing', subModules:['SEO']}
   ];
 
   activeCategory: Category | null = null;
