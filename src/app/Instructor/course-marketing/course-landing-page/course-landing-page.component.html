@@ -33,10 +33,11 @@
                 <input type="text" [(ngModel)]="feature.text" placeholder="Feature Description" required>
                 <input type="file" (change)="onFeatureImageUpload($event, i)">
                 <!-- Inside your feature-item div -->
-<i class="fas fa-times-circle" style="color: red; cursor: pointer;" (click)="removeFeature(i)"></i>
+            <i class="fas fa-times-circle" style="color: red; cursor: pointer;" (click)="removeFeature(i)">      
+            </i>
 
             </div>
-            <button type="button" (click)="addFeature()">+ Add Feature</button>
+            <button type="button"  (click)="addFeature()">+ Add Feature</button>
         </div>
   
       <!-- Buttons -->

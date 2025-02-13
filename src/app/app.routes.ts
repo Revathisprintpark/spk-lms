@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { CourseDetailsComponent } from './courses/course-details/course-details.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
 import { DashboardComponent } from './Instructor/dashboard/dashboard.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -15,5 +16,6 @@ export const routes: Routes = [
     { path: 'Instructor/course-marketing', loadChildren: () => import("../app/Instructor/course-marketing/course-marketing-routing.module").then(x => x.CourseMarketingRoutingModule) },
     { path: 'Instructor/engagement-traffic-analysis', loadChildren: () => import("../app/Instructor/engagement-traffic-analysis/engagement-traffic-analysis-routing.module").then(x => x.EngagementTrafficAnalysisRoutingModule) },
     { path: 'Instructor/instructor-community-support', loadChildren: () => import("../app/Instructor/instructor-community-support/instructor-community-support-routing.module").then(x => x.InstructorCommunitySupportRoutingModule) },
-    { path: 'Instructor/performance-analysis', loadChildren: () => import("../app/Instructor/performance-analytics/performance-analytics-routing.module").then(x => x.PerformanceAnalyticsRoutingModule) }
+    { path: 'Instructor/performance-analysis', loadChildren: () => import("../app/Instructor/performance-analytics/performance-analytics-routing.module").then(x => x.PerformanceAnalyticsRoutingModule) },
+    {path:'student-dashboard',component:StudentDashboardComponent}
 ];

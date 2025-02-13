@@ -1,0 +1,109 @@
+<div class="container-fluid">
+    <!-- 🔹 Navbar -->
+    <nav class="navbar navbar-expand-lg pastel-navbar shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand text-dark fw-bold" href="#">📚 LMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="#">🏠 Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" (click)="showSection('courses')">📖 My Courses</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#">📝 Assignments</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#">📊 Reports</a></li>
+                </ul>
+                <input class="form-control me-2 pastel-input" type="search" placeholder="🔍 Search Courses">
+                <button class="btn pastel-button">🔓 Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- 🔹 Main Content Section -->
+            <div class="col-lg-9">
+                <div class="row">
+                    <!-- 📚 Quick Access Cards -->
+                    <div class="col-md-3" *ngFor="let card of cards">
+                        <div class="card text-center p-3 pastel-card" (click)="showSection(card.key)">
+                            <h5 class="text-dark">{{ card.name }}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📖 My Courses Section -->
+                <div *ngIf="activeSection === 'courses'" class="mt-4">
+                    <h4 class="text-dark">📖 Enrolled Courses</h4>
+                    <div class="row">
+                        <div *ngFor="let course of enrolledCourses" class="col-md-4">
+                            <div class="course-card card">
+                                <img [src]="course.image" class="card-img-top" alt="Course Image">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">{{ course.name }}</h5>
+                                    <p class="card-text text-muted">{{ course.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="text-dark mt-4">🎯 Recommended Courses</h4>
+                    <div class="row">
+                        <div *ngFor="let course of recommendedCourses" class="col-md-4">
+                            <div class="course-card card">
+                                <img [src]="course.image" class="card-img-top" alt="Course Image">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">{{ course.name }}</h5>
+                                    <p class="card-text">{{ course.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📈 Student Progress -->
+                <div class="card mt-4 p-3 pastel-card">
+                    <h5 class="text-dark">📈 Learning Progress</h5>
+                    <svg width="100%" height="200">
+                        <polyline [attr.points]="lineChartPoints" stroke="cornflowerblue" stroke-width="3" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 🔹 Right Sidebar: Profile & Calendar -->
+            <div class="col-lg-3">
+                <div class="card text-center p-3 pastel-card">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle mb-2" width="80">
+                    <h4 class="text-dark">{{ student.name }}</h4>
+                    <p class="text-muted">{{ student.email }}</p>
+                    <p><strong>📚 Total Courses:</strong> {{ student.totalCourses }}</p>
+                    <p><strong>📝 Assignments Pending:</strong> {{ student.pendingAssignments }}</p>
+                    <p><strong>✅ Completed Modules:</strong> {{ student.completedModules }}</p>
+                    <button class="btn pastel-button">📄 View Profile</button>
+                </div>
+
+                <!-- 📆 Academic Calendar -->
+                <div class="card calendar-card mt-3">
+                    <h3>📅 Academic Calendar</h3>
+                    <!-- <div class="calendar-controls">
+                        <select [(ngModel)]="selectedYear" (change)="updateCalendar()">
+                            <option *ngFor="let year of availableYears" [value]="year">{{ year }}</option>
+                        </select>
+                        <select [(ngModel)]="selectedMonth" (change)="updateCalendar()">
+                            <option *ngFor="let month of months" [value]="month.valueOf">{{ month.name }}</option>
+                        </select>
+                    </div> -->
+
+                    <div class="calendar-grid">
+                        <div *ngFor="let day of weekDays" class="day-header">{{ day }}</div>
+                        <div *ngFor="let empty of emptyCells"></div>
+                        <div *ngFor="let day of daysInMonth" class="calendar-day" (click)="markTask(day)">
+                            {{ day }}
+                            <span *ngIf="markedDates.includes(day)" class="task-marker">📌</span>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>

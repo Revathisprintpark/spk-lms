@@ -1,0 +1,30 @@
+<div @slideInFromTopRight>
+  <div class="dialog-title-container">
+    <h2 mat-dialog-title>{{ data.section | titlecase }}</h2>
+  </div>
+
+  <div mat-dialog-content>
+    <ng-container [ngSwitch]="data.section">
+      <!-- Cart Message -->
+      <div *ngSwitchCase="'cart'">
+        <p>Your cart is currently empty.</p>
+        <div class="button-container">
+          <button mat-button color="primary" routerLink="/courses">Browse Courses</button>
+        </div>
+      </div>
+
+      <!-- Notifications Message -->
+      <div *ngSwitchCase="'notifications'">
+        <p>You have 3 new notifications.</p>
+        <p> 📢 Reminder: You're close to completing "Advanced Angular Development." Keep going! 🚀</p>
+        <p>📌 New Assignment Added: Your instructor has posted a new assignment for "Machine Learning Basics." Submit before Feb 15! 📅</p>
+        <p>🎥 Live Session Starts Soon! Join the "AI Chatbot Development" session with Prof. John Doe at 3:00 PM (IST). 🔗 Click here to join!</p>
+      </div>
+
+      <!-- Default Message -->
+      <div *ngSwitchDefault>
+        <p>No content available.</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

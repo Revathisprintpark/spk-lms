@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 0;
+    padding-top: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f9fafc;
     color: #2d3436;
@@ -13,6 +13,7 @@ body {
     margin: 20px auto;
     background-color: #ffffff;
     padding: 30px;
+    padding-top: 0px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }

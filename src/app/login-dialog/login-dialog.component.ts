@@ -22,10 +22,10 @@ import { MatRippleModule } from '@angular/material/core'; // Optional for ripple
   styleUrl: './login-dialog.component.css'
 })
 export class LoginDialogComponent {
-  constructor(private dialogRef: MatDialogRef<LoginDialogComponent>) {}
+  // constructor(private dialogRef: MatDialogRef<LoginDialogComponent>) {}
 
-  closeDialog() {
-    this.dialogRef.close(); // This will close the dialog programmatically
-  }
+  // closeDialog() {
+  //   this.dialogRef.close(); // This will close the dialog programmatically
+  // }
 
 }

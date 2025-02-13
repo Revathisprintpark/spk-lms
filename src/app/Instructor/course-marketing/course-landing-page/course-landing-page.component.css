@@ -2,10 +2,11 @@
     max-width: 800px;          /* Width of the container */
     margin: 30px 0 30px 0;     /* Top and bottom margin, 0 for left/right */
     padding: 20px;
+    padding-top: 60px;
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin-left: 150px;         /* Moves the container to the left by 20px */
+    margin-left: 350px;         /* Moves the container to the left by 20px */
   }
   
   h2, h3, h4 {
